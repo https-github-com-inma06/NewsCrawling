@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NewsActivity">
+    tools:context=".news.NewsActivity">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
@@ -29,9 +29,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="24dp"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="#FFD600"
         android:theme="@style/MaterialTheme"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:icon="@drawable/ic_arrow_drop_up_black_24dp"
         />
 

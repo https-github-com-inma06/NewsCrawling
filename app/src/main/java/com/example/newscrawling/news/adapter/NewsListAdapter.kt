@@ -1,11 +1,11 @@
-package com.example.newscrawling.adapter
+package com.example.newscrawling.news.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newscrawling.R
-import com.example.newscrawling.model.News
+import com.example.newscrawling.news.model.News
 
 class NewsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

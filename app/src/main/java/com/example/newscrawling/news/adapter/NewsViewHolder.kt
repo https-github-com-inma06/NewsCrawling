@@ -1,9 +1,9 @@
-package com.example.newscrawling.adapter
+package com.example.newscrawling.news.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.newscrawling.model.News
+import com.example.newscrawling.news.model.News
 import kotlinx.android.synthetic.main.layout_news_item.view.*
 
 class NewsViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView){

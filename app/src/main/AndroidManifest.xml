@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.newscrawling">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,16 +12,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".main.MainActivity"></activity>
+        <!-- usesCleartextTraffic HTTP 보안 문제 해제 -->
+        <!-- 스플래쉬 액티비티 -->
+        <activity android:name=".splash.SplashActivity">
 
-        <activity android:name=".NewsDetailActivity"/>
-        <activity android:name=".NewsActivity">
+        </activity> <!-- 로그인 액티비티 -->
+        <activity android:name=".login.LoginActivity" /> <!-- 회원가입 액티비티 -->
+        <activity android:name=".register.RegisterActivity" /> <!-- 뉴스 보기 액티비티 -->
+        <activity android:name=".news.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+
+        </activity> <!-- 뉴스 자세히 보기 액티비티 -->
+        <activity android:name=".news.NewsDetailActivity" />
     </application>
 
 </manifest>

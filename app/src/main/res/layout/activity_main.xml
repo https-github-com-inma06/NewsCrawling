@@ -1,10 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".main.MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER_ID : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_userPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER_PASS : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER_NAME : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_userNick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER_NICK : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_userImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER_IMAGE : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_userRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER_REGISTER : "
+        android:textSize="24dp"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_sendMsg"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보내기" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="접속하기" />
+
+        <Button
+            android:id="@+id/btn_disConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나가기" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_readMsg"
+        android:text="이곳에 받은메시지 표시"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+
+</LinearLayout>

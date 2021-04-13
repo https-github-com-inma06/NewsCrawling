@@ -1,20 +1,29 @@
-package com.example.newscrawling
+package com.example.newscrawling.news
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.example.newscrawling.adapter.NewsListAdapter
-import com.example.newscrawling.model.News
+import com.example.newscrawling.App
+import com.example.newscrawling.R
+import com.example.newscrawling.news.adapter.NewsListAdapter
+import com.example.newscrawling.news.model.News
 import kotlinx.android.synthetic.main.activity_news.*
+import kotlinx.coroutines.delay
+import okhttp3.internal.notify
+import okhttp3.internal.notifyAll
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import org.jsoup.Jsoup
-
+import kotlin.system.exitProcess
 
 
 //TODO:
@@ -28,6 +37,7 @@ class NewsActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
     //TODO: 외부 클래스로 수정해야함.
     val NEWS_BASE_URL: String = "https://www.christiantoday.co.kr"
     var NEWS_PAGE: Int = 1
+
     // 페이지당 한번에 가져오는 뉴스 아이템 갯수 (+ 1)
     val NEWS_LIST_COUNT: Int = 14
 
@@ -45,6 +55,7 @@ class NewsActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
 
         //TODO: notifyDataSetChanged를 할경우 아이템이 중복되서 보임
         // notifyDataSetChanged를 하지 않을경우 아이템이 사라졌다가 다시 보여지지 않음
+        // invalidate()
 //        newsListAdapter.notifyDataSetChanged()
         // 페이지를 1페이지로 초기화한다.
         NEWS_PAGE = 1
@@ -57,7 +68,8 @@ class NewsActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
                 newsListAdapter.notifyDataSetChanged()
             }
         })
-        Toast.makeText(App.instance.context(), "새로고침 되었습니다.", Toast.LENGTH_SHORT).show()
+
+        toast("새로고침 되었습니다.")
         // 데이터 리플래시가 끝났을때 종료해준다.
         swipe_refresh.isRefreshing = false
     }
@@ -75,7 +87,7 @@ class NewsActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         // 리사이클러뷰를 설정한다.
         news_recyclerView.apply {
             layoutManager =
-                LinearLayoutManager(this@NewsActivity, LinearLayoutManager.HORIZONTAL, false)
+                LinearLayoutManager(this@NewsActivity, LinearLayoutManager.VERTICAL, false)
             adapter = newsListAdapter
 
             //아이템이 클릭되었을 때
@@ -124,11 +136,11 @@ class NewsActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
                     }
 
                     if (lastVisibleItemPosition > 0) {
-                        // 스크롤이 내려갔다면
+                        // 스크롤이 내려갔다면 FAB 보이기
                         main_fab.visibility = View.VISIBLE
 //                        isDownScroll = true
-                    } else if(lastVisibleItemPosition == 0) {
-                        // 스크롤이 최상단이라면
+                    } else if (lastVisibleItemPosition == 0) {
+                        // 스크롤이 최상단이라면 FAB 없애기
                         main_fab.visibility = View.INVISIBLE
                     }
                 }
