@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NewsCrawling</string>
+    <string name="fab_up_text">위로</string>
+</resources>

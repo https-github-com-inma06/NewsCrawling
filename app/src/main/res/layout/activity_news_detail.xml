@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".NewsDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:theme="@style/MaterialTheme"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@color/colorAccent">
+
+            <LinearLayout
+                android:id="@+id/news_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/news_time_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="101010시간"
+                    android:textSize="15dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/news_title_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="뉴스 제목이 들어갈 자리"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/news_thumbNail_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/news_content_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="뉴스 내용이 들어갈 자리"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="4dp"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center_horizontal"
+        android:theme="@style/MaterialTheme"
+        app:icon="@drawable/ic_share_black_24dp" />
+
+</RelativeLayout>

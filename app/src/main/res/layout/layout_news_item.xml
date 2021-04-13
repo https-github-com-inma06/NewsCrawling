@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="15dp"
+    android:theme="@style/MaterialTheme"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/item_radius"
+        android:alpha="0.8"
+        >
+
+        <!-- 뉴스 작성 일시 -->
+        <TextView
+            android:id="@+id/tv_main_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="Time"
+            android:maxLines="1"
+            android:layout_margin="8dp"/>
+
+        <!-- 뉴스 제목-->
+        <TextView
+            android:id="@+id/tv_main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="TITLE"
+            android:textColor="#000"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_margin="8dp"/>
+
+        <!-- 뉴스 썸네일 -->
+        <ImageView
+            android:id="@+id/iv_main_thumbNail"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"/>
+        <!-- 뉴스 내용 -->
+        <TextView
+            android:id="@+id/tv_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:text="Content"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_main_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
